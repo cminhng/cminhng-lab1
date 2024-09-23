@@ -18,17 +18,15 @@ public class Enigma{
         
     }
 
-
     public String decrypt(String message){        
         //TODO
     }
-
-
     
     public String encrypt(String message){
         //TODO
 
-    
+    }
+
     private void rotate(){
         if(rotors[0].rotate()){
             if(rotors[1].rotate()){
