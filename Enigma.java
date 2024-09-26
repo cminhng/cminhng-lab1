@@ -20,11 +20,50 @@ public class Enigma{
 
     public String decrypt(String message){        
         //TODO
+        String decrypt = "";
+        /* pseudo
+        - okay for each char in String message
+            - 1. find index of char in rotors[3]
+            - 2. get char at same index in rotors[2]
+            - 3. get index of same char in rotors[3]
+            - 4. get char at index in rotors[0]
+            - 5. concat to decrypt str
+            - 6. call rotate. 
+        */
+        char[] toDecrypt = message.toCharArray();
+        for(int i = 0; i < toDecrypt.length; i++){
+            int idx = rotors[3].indexOf(toDecrypt[i]);
+            char correspond = rotors[2].charAt(idx);
+            idx = rotors[3].indexOf(correspond);
+            correspond = rotors[0].charAt(idx);
+            decrypt = decrypt.concat(Character.toString(correspond));
+            this.rotate();
+        }
+        return decrypt;
     }
     
     public String encrypt(String message){
         //TODO
-
+        String encrypt = ""; 
+        /* pseudo
+        - okay for each char in String message
+            - 1. find index of char in rotors[0]
+            - 2. get char at same index in rotors[3]
+            - 3. get index of same char in rotors[2]
+            - 4. get char at index in rotors[3]
+            - 5. concat to encrypt str
+            - 6. call rotate. 
+        */
+        char[] toEncrypt = message.toCharArray();
+        for(int i = 0; i < toEncrypt.length; i++){
+            int idx = rotors[0].indexOf(toEncrypt[i]);
+            char correspond = rotors[3].charAt(idx);
+            idx = rotors[2].indexOf(correspond);
+            correspond = rotors[3].charAt(idx);
+            encrypt = encrypt.concat(Character.toString(correspond));
+            this.rotate();
+        }
+        return encrypt;
     }
 
     private void rotate(){
