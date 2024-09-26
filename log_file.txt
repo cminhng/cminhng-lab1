@@ -1,0 +1,41 @@
+commit f78c4f1c256d7b08aea6d4875d2f4da3d6ec72a2
+Author: christine nguyen <cminhng@cmng-MacBook-Pro.local>
+Date:   Thu Sep 26 10:40:22 2024 -0700
+
+    added final comments
+
+commit c6c283a4c6a585d7dc5b972094039c492f060008
+Author: christine nguyen <cminhng@cmng-MacBook-Pro.local>
+Date:   Thu Sep 26 08:31:13 2024 -0700
+
+    handled edge cases in Rotor.charAt(); added junit file; fixed outofbounds error in enigma/encrypt/decrypt
+
+commit 62c8260db57475e2c07dfbca2bcf41d85f2a25c2
+Author: christine nguyen <cminhng@cmng-MacBook-Pro.local>
+Date:   Thu Sep 26 08:14:50 2024 -0700
+
+    ozzy OH. fixed Rotor rotate()
+
+commit cbf8bbb5d88b5045354dadc030abcd57a6c9308e
+Author: christine nguyen <cminhng@cmng-MacBook-Pro.local>
+Date:   Wed Sep 25 21:01:12 2024 -0700
+
+    third commit
+
+commit 74b6fafb9612e4fbc6d9acf15919d88ef077a2bb
+Author: christine nguyen <cminhng@cmng-MacBook-Pro.local>
+Date:   Mon Sep 23 12:08:13 2024 -0700
+
+    second commit
+
+commit 10e57f134513fdea309eead8f225ae39bb982577
+Author: christine nguyen <cminhng@cmng-MacBook-Pro.local>
+Date:   Mon Sep 23 11:42:17 2024 -0700
+
+    first commit
+
+commit d6c3abd3cff157c2ca589163fbb400219055f987
+Author: cminhng <christine.nguyen1@gwmail.gwu.edu>
+Date:   Mon Sep 23 11:12:29 2024 -0700
+
+    Add files via upload
