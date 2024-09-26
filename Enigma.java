@@ -21,21 +21,17 @@ public class Enigma{
     public String decrypt(String message){        
         //TODO
         String decrypt = "";
-        /* pseudo
-        - okay for each char in String message
-            - 1. find index of char in rotors[3]
-            - 2. get char at same index in rotors[2]
-            - 3. get index of same char in rotors[3]
-            - 4. get char at index in rotors[0]
-            - 5. concat to decrypt str
-            - 6. call rotate. 
-        */
         char[] toDecrypt = message.toCharArray();
         for(int i = 0; i < toDecrypt.length; i++){
+            //retrieve idx of target char in outer rotor
             int idx = rotors[2].indexOf(toDecrypt[i]);
+            //retrieve char at same index in middle rotor
             char correspond = rotors[1].charAt(idx);
+            //retrieve idx of that char in outer rotor
             idx = rotors[2].indexOf(correspond);
+            //retrieve char at that idx in inner rotor
             correspond = rotors[0].charAt(idx);
+            //add decrypted char to decrypted string
             decrypt = decrypt.concat(Character.toString(correspond));
             this.rotate();
         }
@@ -43,23 +39,18 @@ public class Enigma{
     }
     
     public String encrypt(String message){
-        //TODO
         String encrypt = ""; 
-        /* pseudo
-        - okay for each char in String message
-            - 1. find index of char in rotors[0]
-            - 2. get char at same index in rotors[3]
-            - 3. get index of same char in rotors[2]
-            - 4. get char at index in rotors[3]
-            - 5. concat to encrypt str
-            - 6. call rotate. 
-        */
         char[] toEncrypt = message.toCharArray();
         for(int i = 0; i < toEncrypt.length; i++){
+            //retrieve idx of target char in inner rotor
             int idx = rotors[0].indexOf(toEncrypt[i]);
+            //retrieve char at same index in outer rotor
             char correspond = rotors[2].charAt(idx);
+            //retrieve idx of that char in middle rotor
             idx = rotors[1].indexOf(correspond);
+            //retrieve char at that idx in outer rotor
             correspond = rotors[2].charAt(idx);
+            //add encrypted char to encrypted string
             encrypt = encrypt.concat(Character.toString(correspond));
             this.rotate();
         }
