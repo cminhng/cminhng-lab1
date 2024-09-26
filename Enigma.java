@@ -32,9 +32,9 @@ public class Enigma{
         */
         char[] toDecrypt = message.toCharArray();
         for(int i = 0; i < toDecrypt.length; i++){
-            int idx = rotors[3].indexOf(toDecrypt[i]);
-            char correspond = rotors[2].charAt(idx);
-            idx = rotors[3].indexOf(correspond);
+            int idx = rotors[2].indexOf(toDecrypt[i]);
+            char correspond = rotors[1].charAt(idx);
+            idx = rotors[2].indexOf(correspond);
             correspond = rotors[0].charAt(idx);
             decrypt = decrypt.concat(Character.toString(correspond));
             this.rotate();
@@ -57,9 +57,9 @@ public class Enigma{
         char[] toEncrypt = message.toCharArray();
         for(int i = 0; i < toEncrypt.length; i++){
             int idx = rotors[0].indexOf(toEncrypt[i]);
-            char correspond = rotors[3].charAt(idx);
-            idx = rotors[2].indexOf(correspond);
-            correspond = rotors[3].charAt(idx);
+            char correspond = rotors[2].charAt(idx);
+            idx = rotors[1].indexOf(correspond);
+            correspond = rotors[2].charAt(idx);
             encrypt = encrypt.concat(Character.toString(correspond));
             this.rotate();
         }
