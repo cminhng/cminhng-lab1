@@ -14,7 +14,6 @@ public class Rotor {
         //TODO
         String last = rotorValues.substring(rotorValues.length()-1);
         rotorValues = last.concat(rotorValues.substring(0, rotorValues.length()-1));
-        //System.out.println("TESTING " + rotorValues);
 
         if(last.charAt(0) == startChar){
             return true;
@@ -40,11 +39,9 @@ public class Rotor {
 
     public char charAt(int idx){
         //TODO
-        //param check
-        if(idx < 0 || idx >= rotorValues.length()){
-            return '\0'; //????????????i wanted to handle some edge cases but i cant return null
-        }
-        return rotorValues.charAt(idx);
+        //% to handle edge cases (idx < 0 || idx > rotorValues.length)
+        return rotorValues.charAt(idx%rotorValues.length());
     }
+    //next commit - commenting
 }
     
